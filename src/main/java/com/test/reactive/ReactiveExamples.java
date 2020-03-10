@@ -11,7 +11,7 @@ import java.util.TimerTask;
 
 public class ReactiveExamples {
 
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
+    private static final Logger log = LoggerFactory.getLogger(BasicExamples.class);
 
     public static void main(String[] args) {
         intervalTimeFromCreate();

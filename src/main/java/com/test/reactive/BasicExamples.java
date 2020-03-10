@@ -46,14 +46,12 @@ import java.util.concurrent.CountDownLatch;
  * <p>
  * Netty = servidor reactivo.
  */
-@SpringBootApplication
-public class Main implements CommandLineRunner {
+public class BasicExamples implements CommandLineRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BasicExamples.class);
 
-    public static void main(String[] args) {
-
-        SpringApplication.run(Main.class, args);
+    public static void main(String[] args) throws InterruptedException {
+        intervalContinuousExample();
     }
 
     /**
