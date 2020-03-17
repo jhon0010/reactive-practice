@@ -10,8 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import reactor.util.context.Context;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -47,7 +48,19 @@ public class MainSpring implements CommandLineRunner {
                 new Product("TV", 6.500),
                 new Product("Mouse", 2.00),
                 new Product("Keys", 0.50),
-                new Product("PC", 2000.50)
+                new Product("PC", 2500.50),
+                new Product("Candle", 4.444),
+                new Product("Glass", 92.00),
+                new Product("Window", 0.50),
+                new Product("Cellphone", 2000.50),
+                new Product("TV", 6.500),
+                new Product("Mouse", 2.00),
+                new Product("Keys", 0.50),
+                new Product("PC", 2500.50),
+                new Product("Candle", 4.444),
+                new Product("Glass", 92.00),
+                new Product("Window", 0.50),
+                new Product("Cellphone", 2000.50)
         )
                 .flatMap(product -> {
                             product.setCreatedAt(new Date());
