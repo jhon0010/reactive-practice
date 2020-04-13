@@ -1,6 +1,5 @@
-package com.test.reactive;
+package com.practice.reactor.reactive;
 
-import org.springframework.boot.SpringApplication;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.context.Context;

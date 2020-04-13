@@ -1,14 +1,12 @@
-package com.test.reactive;
+package com.practice.reactor.reactive;
 
 
-import com.test.domain.Comment;
-import com.test.domain.User;
-import com.test.domain.UserComments;
+import com.practice.reactor.domain.Comment;
+import com.practice.reactor.domain.UserComments;
+import com.practice.reactor.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

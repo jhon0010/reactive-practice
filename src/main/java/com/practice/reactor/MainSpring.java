@@ -1,7 +1,7 @@
-package com.test;
+package com.practice.reactor;
 
-import com.test.domain.documents.Product;
-import com.test.repository.ProductRepository;
+import com.practice.reactor.domain.documents.Product;
+import com.practice.reactor.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.util.context.Context;
 
 import java.util.Date;
-
 
 @SpringBootApplication
 public class MainSpring implements CommandLineRunner {
@@ -27,6 +24,11 @@ public class MainSpring implements CommandLineRunner {
     @Autowired
     private ReactiveMongoTemplate reactiveMongoTemplate;
 
+    public MainSpring(ProductRepository repository, ReactiveMongoTemplate reactiveMongoTemplate) {
+        this.repository = repository;
+        this.reactiveMongoTemplate = reactiveMongoTemplate;
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(MainSpring.class, args);
     }
@@ -35,14 +37,13 @@ public class MainSpring implements CommandLineRunner {
      * The flatmap operator return the POJO from the Mono representation.
      * If you use only map is for working for mono and fluxes.
      *
-     * @param args
-     * @throws Exception
+     * @param args some
      */
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         reactiveMongoTemplate.dropCollection("product")
-                .subscribe(); //
+                .subscribe();
 
         Flux.just(
                 new Product("TV", 6.500),

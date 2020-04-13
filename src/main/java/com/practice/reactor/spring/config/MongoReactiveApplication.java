@@ -1,8 +1,8 @@
-package com.test.spring.config;
+package com.practice.reactor.spring.config;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
-import com.test.repository.ProductRepository;
+import com.practice.reactor.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

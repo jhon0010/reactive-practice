@@ -1,4 +1,4 @@
-package com.test.domain;
+package com.practice.reactor.domain;
 
 import java.util.ArrayList;
 import java.util.List;

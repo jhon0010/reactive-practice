@@ -1,4 +1,4 @@
-package com.test.domain;
+package com.practice.reactor.domain;
 
 public class UserComments {
 

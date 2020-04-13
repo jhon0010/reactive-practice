@@ -1,7 +1,6 @@
-package com.test;
+package com.practice.reactor;
 
-import com.test.domain.documents.Product;
-import io.vertx.core.http.HttpHeaders;
+import com.practice.reactor.domain.documents.Product;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -11,11 +10,13 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-public class MainReactor {
 
+public class MainReactor {
     private static Logger logger = Logger.getLogger(MainReactor.class.getCanonicalName());
 
+
     public static void main(String args[]) {
+
 
         List<Product> products = getProductsListFromFlux();
         products.forEach(product -> logger.info("From list product = " + product));
