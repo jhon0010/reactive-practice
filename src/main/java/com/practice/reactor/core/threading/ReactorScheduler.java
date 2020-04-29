@@ -42,9 +42,9 @@ public class ReactorScheduler {
 
     public static void main(String[] args) throws InterruptedException {
 
-//        inOtherThread();
-//        subscribeOn();
-//        MultiInsideFlux();
+        durationInOtherThread();
+        subscribeOn();
+        multiInsideFlux();
         publishOn();
 
         Thread.sleep(1000);
@@ -63,6 +63,7 @@ public class ReactorScheduler {
 
         final Flux<String> flux = Flux
                 .range(1, 2)
+                .log()
                 .map(i -> 10 + i)
                 .map(x -> {
                     LOGGER.info("" + x);
@@ -71,10 +72,11 @@ public class ReactorScheduler {
                 .publishOn(s)
                 .map(i -> "value " + i);
 
-        new Thread(() -> flux.subscribe(LOGGER::info));
+        flux.subscribe(LOGGER::info); // you can see this execution because it is in the same thread scheduled.
+        new Thread(() -> flux.subscribe(LOGGER::info)); // you can't see this because it is executed by other thread different than Schedule.
     }
 
-    private static void MultiInsideFlux() {
+    private static void multiInsideFlux() {
         Flux.range(0,10)
                 .flatMap(x -> {
                     return Flux.range(10,20)
@@ -96,6 +98,8 @@ public class ReactorScheduler {
      */
     public static void subscribeOn(){
 
+        Scheduler s = Schedulers.newParallel("parallel-scheduler", 4);
+
         Flux.range(0,10).map(x -> "" + x)
                 .delayElements(Duration.ofMillis(10))
                 .doOnNext(LOGGER::info)
@@ -110,7 +114,7 @@ public class ReactorScheduler {
      * Flux<Long> that ticks every 300ms. By default, this is enabled by Schedulers.parallel(). The following line
      * changes the Scheduler to a new instance similar to Schedulers.single():
      */
-    private static void inOtherThread() {
+    private static void durationInOtherThread() {
         Flux.interval(Duration.ofMillis(300), Schedulers.newSingle("test"));
     }
 }
