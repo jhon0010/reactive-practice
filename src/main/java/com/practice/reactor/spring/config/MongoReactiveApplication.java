@@ -2,7 +2,7 @@ package com.practice.reactor.spring.config;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
-import com.practice.reactor.repository.ProductRepository;
+import com.practice.reactor.spring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

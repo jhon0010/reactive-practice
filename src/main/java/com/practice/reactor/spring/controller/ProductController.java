@@ -1,7 +1,7 @@
-package com.practice.reactor.controller;
+package com.practice.reactor.spring.controller;
 
-import com.practice.reactor.domain.documents.Product;
-import com.practice.reactor.repository.ProductRepository;
+import com.practice.reactor.spring.domain.documents.Product;
+import com.practice.reactor.spring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

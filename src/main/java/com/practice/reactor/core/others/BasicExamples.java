@@ -1,9 +1,9 @@
-package com.practice.reactor.reactive;
+package com.practice.reactor.core.others;
 
 
-import com.practice.reactor.domain.Comment;
-import com.practice.reactor.domain.UserComments;
-import com.practice.reactor.domain.User;
+import com.practice.reactor.spring.domain.Comment;
+import com.practice.reactor.spring.domain.UserComments;
+import com.practice.reactor.spring.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

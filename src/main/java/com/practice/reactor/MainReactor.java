@@ -1,6 +1,6 @@
 package com.practice.reactor;
 
-import com.practice.reactor.domain.documents.Product;
+import com.practice.reactor.spring.domain.documents.Product;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -15,8 +15,7 @@ public class MainReactor {
     private static Logger logger = Logger.getLogger(MainReactor.class.getCanonicalName());
 
 
-    public static void main(String args[]) {
-
+    public static void main(String[] args) {
 
         List<Product> products = getProductsListFromFlux();
         products.forEach(product -> logger.info("From list product = " + product));
@@ -66,7 +65,7 @@ public class MainReactor {
 
     private static Flux<Product> getProductsFromThirdParty() {
         return Flux.just(new Product("TV", 6.500))
-                .delaySequence(Duration.ofMillis(900))
+                .delaySequence(Duration.ofMillis(1900))
                 ;
     }
 

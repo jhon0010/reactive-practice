@@ -1,4 +1,4 @@
-package com.practice.reactor.domain;
+package com.practice.reactor.spring.domain;
 
 public class UserComments {
 

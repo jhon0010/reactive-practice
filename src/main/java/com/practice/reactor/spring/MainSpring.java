@@ -1,7 +1,7 @@
-package com.practice.reactor;
+package com.practice.reactor.spring;
 
-import com.practice.reactor.domain.documents.Product;
-import com.practice.reactor.repository.ProductRepository;
+import com.practice.reactor.spring.domain.documents.Product;
+import com.practice.reactor.spring.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

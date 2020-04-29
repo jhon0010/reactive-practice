@@ -1,4 +1,4 @@
-package com.practice.reactor.reactive;
+package com.practice.reactor.core.others;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

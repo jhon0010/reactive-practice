@@ -1,4 +1,4 @@
-package com.practice.reactor.reactive;
+package com.practice.reactor.core.others;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
