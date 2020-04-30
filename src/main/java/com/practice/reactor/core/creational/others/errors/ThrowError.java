@@ -1,4 +1,4 @@
-package com.practice.reactor.core.errors;
+package com.practice.reactor.core.creational.others.errors;
 
 import org.slf4j.Logger;
 import reactor.core.publisher.Mono;
