@@ -1,9 +1,11 @@
 package com.practice.reactor.spring.domain.documents;
 
+import com.practice.reactor.spring.domain.Comment;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Is persisted in bson mongo
@@ -16,12 +18,22 @@ public class Product {
     private String name;
     private Double price;
     private Date createdAt;
+    private List<Comment> comments;
 
-    public Product() {}
+    public Product() {
+    }
 
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public String getId() {

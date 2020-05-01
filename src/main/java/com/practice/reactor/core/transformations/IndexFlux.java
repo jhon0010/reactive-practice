@@ -13,6 +13,7 @@ public class IndexFlux {
     private static final Logger LOGGER = getLogger(IndexFlux.class);
 
     public static void main(String[] args) {
+
         List<String> names = asList("John", "Doe", "Bean", "Peter");
 
         Flux.fromIterable(names)
