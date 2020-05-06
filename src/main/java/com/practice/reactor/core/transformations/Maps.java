@@ -17,8 +17,8 @@ public class Maps {
 
 //        flatMapIntoAnotherFlux();
         flatMapIntoAnotherMonoType();
-        mapIntoAnotherMonoType();
 
+        mapIntoAnotherMonoType();
     }
 
     private static void mapIntoAnotherMonoType() {

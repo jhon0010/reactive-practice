@@ -12,9 +12,9 @@ import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class ToOtherFluxsMonos {
+public class ToOtherFluxMono {
 
-    private static final Logger LOGGER = getLogger(ToOtherFluxsMonos.class);
+    private static final Logger LOGGER = getLogger(ToOtherFluxMono.class);
 
     public static void main(String[] args) {
 
@@ -26,15 +26,15 @@ public class ToOtherFluxsMonos {
 
         returnManyFluxes();
 
-        System.out.println("-- flatMapSequential with parallelism --");
+        LOGGER.info("-- flatMapSequential with parallelism --");
         Flux.range(1, 1000)
                 .flatMapSequential(integer -> {
-                    System.out.println("-- starting: " + integer + " --");
+                    LOGGER.warn("-- starting: " + integer + " --");
                     return Flux.range(integer, 4)
                             .subscribeOn(Schedulers.newParallel("myThread", 2));
                 })
                 .subscribe(x ->
-                        System.out.println(x + " - " + Thread.currentThread().getName() + " - " + LocalTime.now()));
+                        LOGGER.info(x + " - " + Thread.currentThread().getName() + " - " + LocalTime.now()));
 
 
     }
