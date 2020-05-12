@@ -2,6 +2,8 @@ package com.practice.reactor.core.transformations;
 
 import org.slf4j.Logger;
 
+import java.time.LocalDateTime;
+
 import static org.slf4j.LoggerFactory.getLogger;
 
 public class IgnoringDataEmpty {
@@ -21,14 +23,17 @@ public class IgnoringDataEmpty {
     }
 
     public static void main(String[] args) {
-        IgnoringDataEmpty instance = IgnoringDataEmpty.getInstance();
-        LOGGER.info("Instance of " + instance);
 
-        IgnoringDataEmpty instance2 = IgnoringDataEmpty.getInstance();
-        LOGGER.info("Instance of 2 " + instance2);
+        LOGGER.warn("" + LocalDateTime.now().equals(LocalDateTime.now()));
 
-        IgnoringDataEmpty instance3 = IgnoringDataEmpty.getInstance();
-        LOGGER.info("Instance of 3 " + instance3);
+//        IgnoringDataEmpty instance = IgnoringDataEmpty.getInstance();
+//        LOGGER.info("Instance of " + instance);
+//
+//        IgnoringDataEmpty instance2 = IgnoringDataEmpty.getInstance();
+//        LOGGER.info("Instance of 2 " + instance2);
+//
+//        IgnoringDataEmpty instance3 = IgnoringDataEmpty.getInstance();
+//        LOGGER.info("Instance of 3 " + instance3);
     }
 
 }
